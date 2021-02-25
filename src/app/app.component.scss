@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  border: 1px solid lightgrey;
+  border-radius: 30px;
+  position: absolute;
+  top: calc(50% - 386px/2);
+  left: calc(50% - 500px);
+}
+
+

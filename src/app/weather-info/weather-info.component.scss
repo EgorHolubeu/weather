@@ -1,0 +1,100 @@
+.weather-container {
+  width: 600px;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.item {
+  width: 150px;
+  border: 1px solid darkgrey;
+  border-radius: 10px;
+  height: 100px;
+  font-size: 20px;
+  position: relative;
+
+  span:nth-child(1) {
+    position: absolute;
+    top: 10px;
+  }
+
+}
+
+
+.item-container {
+  &:nth-child(1) .item:nth-child(1) span:nth-child(1) {
+    left: 20px;
+  }
+
+  &:nth-child(1) .item:nth-child(2) span:nth-child(1) {
+    left: 35px;
+  }
+
+  &:nth-child(2) .item:nth-child(1) span:nth-child(1) {
+    left: 40px;
+  }
+
+  &:nth-child(2) .item:nth-child(2) span:nth-child(1) {
+    left: 50px;
+  }
+  &:nth-child(3) .item:nth-child(1) span:nth-child(1) {
+    left: 10px;
+  }
+
+  &:nth-child(3) .item:nth-child(2) span:nth-child(1) {
+    left: 50px;
+  }
+
+  &:nth-child(1) .item:nth-child(1) .value {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+  }
+
+  &:nth-child(1) .item:nth-child(2) .value {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+  }
+  &:nth-child(2) .item:nth-child(1) .value {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+  }
+
+  &:nth-child(2) .item:nth-child(2) .value {
+    position: absolute;
+    bottom: 20px;
+    left: 55px;
+  }
+
+  &:nth-child(3) .item:nth-child(1) .value {
+    position: absolute;
+    bottom: 20px;
+    left: 35px;
+  }
+
+  &:nth-child(3) .item:nth-child(2) .value {
+    position: absolute;
+    bottom: 10px;
+    left: 25px;
+  }
+}
+.item-container {
+  width: 400px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0;
+}
+
+.temp {
+  margin: 50px 0;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+}
+
+
+

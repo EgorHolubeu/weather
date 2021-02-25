@@ -1,0 +1,66 @@
+.list-item {
+  width: 290px;
+  height: 30px;
+  border-bottom: 1px solid darkgrey;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+
+  &:hover {
+    cursor: pointer;
+    border-radius: 5px;
+    background: darkgrey;
+  }
+}
+.active {
+  background: darkgrey;
+  border-radius: 5px;
+}
+
+mat-icon {
+  &:hover {
+    cursor: pointer;
+    background: white;
+    border-radius: 3px;
+  }
+}
+
+.list-container {
+  height: 194px;
+}
+
+.scroll {
+  overflow-y: scroll;
+}
+
+

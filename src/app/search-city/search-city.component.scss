@@ -1,0 +1,60 @@
+mat-form-field {
+  width: 300px;
+
+  input {
+    width: 400px;
+    height: 30px;
+    border-bottom: 1px solid grey;
+    font-size: 20px;
+
+    &:focus {
+      border-bottom: 1px solid blue;
+      transition: .5s;
+    }
+  }
+
+  label {
+    font-size: 20px;
+  }
+}
+form {
+  position: relative;
+  margin-top: 40px;
+}
+.add_city {
+  height: 30px;
+  width: 70px;
+  font-size: 20px;
+
+}
+
+::ng-deep .cdk-overlay-container {
+  /* Do you changes here */
+  position: absolute;
+  top: 190px;
+  left: 183px;
+}
+
+::ng-deep .mat-autocomplete-panel {
+  background: #ffffff;
+}
+
+::ng-deep .mat-option {
+  &:hover {
+    background: lightgrey;
+  }
+}
+
+.add_city {
+  display: block;
+  margin: 10px auto;
+  width: 90px;
+  border-radius: 10px;
+  border: none;
+  background: lightgrey;
+
+  &:hover {
+    background: darkgrey;
+    cursor: pointer;
+  }
+}

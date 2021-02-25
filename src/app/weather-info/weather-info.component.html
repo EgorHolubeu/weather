@@ -1,0 +1,46 @@
+<div class="weather-container">
+  <div>
+    <div class="item-container">
+      <div class="item">
+        <span>Temperature:</span><br>
+        <span class="value">
+        {{response?.current['temperature']['$']['value']}} &#176;C
+      </span>
+      </div>
+      <div class="item">
+        <span>Humidity:</span> <br>
+        <span class="value">
+        {{response?.current['humidity']['$']['value']}} %
+      </span>
+      </div>
+    </div>
+    <div class="item-container">
+      <div class="item">
+        <span>Pressure:</span> <br>
+        <span class="value">
+        {{response?.current['pressure']['$']['value']}} {{response?.current['pressure']['$']['unit']}}
+      </span>
+      </div>
+      <div class="item">
+        <span>Wind:</span> <br>
+        <span class="value">
+       {{response?.current['wind']['speed']['$']['value']}} {{response?.current['wind']['speed']['$']['unit']}}
+      </span>
+      </div>
+    </div>
+    <div class="item-container">
+      <div class="item">
+        <span>Wind direction:</span> <br>
+        <span class="value wind">
+        {{response?.current['wind']['direction']['$']['name']}}
+      </span>
+      </div>
+      <div class="item">
+        <span>Date:</span> <br>
+        <span class="value">
+        {{response?.current['lastupdate']['$']['value'] | date : 'MMM d, y, h:mm:ss a'}}
+      </span>
+      </div>
+    </div>
+  </div>
+</div>

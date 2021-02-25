@@ -1,0 +1,10 @@
+<div class="list-container">
+  <div *ngFor="let city of trackListLS; let i = index" class="list-item" #trackListLS
+  (click)="onSelectItem($event.target); getCity($event.target)" [class.active]="city === activeItem" [ngClass]="i === 0 ? 'active' : null">
+    <span class="city-item">{{city}}</span>
+    <div class="city_change_btn">
+      <mat-icon class="refresh" (click) = refresh($event.target)>autorenew</mat-icon>
+      <mat-icon class="delete" (click)="delete($event.target)">delete_forever</mat-icon>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<form>
+  <mat-form-field>
+      <label for="search">City:</label>
+      <input id="search" type="text" matInput [(ngModel)]="newTrackCity" [matAutocomplete]="auto" [formControl]="MyControl" >
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let cityName of filteredOptions | async" [value]="cityName">
+        {{cityName}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <br>
+  <button class="add_city" (click)="addCityToTrackList()">Add</button>
+</form>
+
