@@ -10,7 +10,7 @@ import { StorageMap } from '@ngx-pwa/local-storage';
 })
 export class CityTrackListComponent implements AfterViewInit{
   itemsList = document.getElementsByClassName('list-item');
-  public trackListLS: string[] = JSON.parse(localStorage.getItem('TrackCityList'));
+  public trackListLS: string[] =JSON.parse(localStorage.getItem('TrackCityList')).length ? JSON.parse(localStorage.getItem('TrackCityList')) : ['Minsk'];
   public activeItem: string;
 
   constructor(private weatherService: CityWeatherHttpService, private addCityService: addCityToTrackListService,
@@ -70,23 +70,26 @@ export class CityTrackListComponent implements AfterViewInit{
   }
 
   onSelectItem(target): void {
-    if (target.classList.contains('list-item')) {
-      const city = target.getElementsByTagName('span')[0].textContent;
-      this.weatherService.getCityName(city);
-      for (let i = 0; i < this.itemsList.length; i++) {
-        this.itemsList[i].classList.remove('active');
-      }
+    if (!target.classList.contains('refresh') && !target.classList.contains('delete')) {
+      if (target.classList.contains('list-item')) {
+        const city = target.getElementsByTagName('span')[0].textContent;
+        this.weatherService.getCityName(city);
+        for (let i = 0; i < this.itemsList.length; i++) {
+          this.itemsList[i].classList.remove('active');
+        }
 
-      this.activeItem = city;
-    } else {
-      const city = target.parentNode.getElementsByTagName('span')[0].textContent;
-      this.weatherService.getCityName(city);
-      for (let i = 0; i < this.itemsList.length; i++) {
-        this.itemsList[i].classList.remove('active');
-      }
+        this.activeItem = city;
+      } else {
+        const city = target.parentNode.getElementsByTagName('span')[0].textContent;
+        this.weatherService.getCityName(city);
+        for (let i = 0; i < this.itemsList.length; i++) {
+          this.itemsList[i].classList.remove('active');
+        }
 
-      this.activeItem = city;
+        this.activeItem = city;
+      }
     }
+
 
   }
 
@@ -98,7 +101,6 @@ export class CityTrackListComponent implements AfterViewInit{
     if (listContainerItems.length > 3) {
       listContainer.classList.add('scroll');
     }
-
-    this.getCityWeather(this.itemsList[0].childNodes[0].textContent);
+    this.getCityWeather(this.itemsList[0].childNodes[0].textContent || this.trackListLS);
   }
 }
